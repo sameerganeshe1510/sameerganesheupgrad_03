@@ -40,6 +40,26 @@ Metal
 5. All images are of uniform size 256 x 256.
 6. Data set partitioned into training, and test sets for model development and evaluation.
 
+ ## Model Training results:
+ 1. Tried Creating models with different combination of conv layers, batch size, no of filters, batch normaliation, pooling and dropouts.
+2. Not all the models executed, few got stuck for very long time, due to resource constraint. Did not included data augmentation being option and resource constraint.
+3. **Batch normalization** did not showed any significant contribution towards improving the accuracy.
+4. Adding **Drop out layer** helped in improving the accuracy
+5. **Overall Accuracy**: The model has an overall accuracy of 46%, indicating that it correctly classifies waste products less than half the time.
+6. Class Performance:
+   **Plastic** : This class has the highest recall (0.88), meaning the model is good at identifying plastic waste. It also has a relatively high f1-score (0.56), 
+                 indicating a balance between precision and recall.  
+   **Paper**: Despite having the highest precision (0.75), the recall is quite low (0.23), suggesting that while the model is accurate when it predicts paper, it often misses paper 
+                 items.  
+   **Metal**: This class has the lowest precision (0.32) and recall (0.07), indicating poor performance in identifying metal waste.  
+
+8. **Class Imbalance**: The precision, recall & f1-score vary significantly across different classes, with Plastic having the highest number of instances (689) and Cardboard the lowest (162). This imbalance can affect the model's performance, as it may be biased towards classes with more instances.
+9. These insights suggest areas for improvement, such as addressing class imbalance and enhancing the model's ability to identify certain classes like Glass, Metals etc. 
+
+
+
+
+
 ## Technologies used
 
   #### numpy version: 1.26.4
